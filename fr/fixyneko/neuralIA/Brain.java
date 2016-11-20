@@ -28,6 +28,10 @@ public class Brain {
 	public int getScore(Brain brain) {
 		return (this.score);
 	}
+	
+	public int getLayersNum(){
+		return layers.length;
+	}
 
 	public Layer getLayer(int layer) {
 		return layers[layer];

@@ -1,6 +1,8 @@
 package fr.fixyneko.neuralIA;
 
-public class Generation {
+import fr.gagoi.pwal.app.AppElement;
+
+public class Generation implements AppElement{
 
 	private Brain[] brains;
 
@@ -21,5 +23,23 @@ public class Generation {
 			outputs[i] = brains[i].compute(inputs);
 		}
 		return outputs;
+	}
+	
+	public int[][] testAll(int[][] inputs){
+		int[][]outs = new int[brains.length][brains[0].outputNum()];
+		for( int i=0;i<brains.length;i++){
+			outs[i] = brains[i].compute(inputs[i]);
+		}
+		return outs;
+	}
+	
+	public void evolve(Brain[] bests){
+		
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
 	}
 }
