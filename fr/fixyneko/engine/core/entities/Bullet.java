@@ -8,7 +8,7 @@ import fr.fixyneko.engine.core.Game;
 public class Bullet implements IEntity {
 	private float posX, posY, vecX, vecY;
 	private boolean isAlive = true;
-	private int size =  Game.bulletSize + new Random().nextInt(Game.bulletSize);
+	private int size = Game.bulletSize + new Random().nextInt(Game.bulletSize);
 
 	public Bullet() {
 		switch (new Random().nextInt(4)) {
@@ -39,8 +39,8 @@ public class Bullet implements IEntity {
 
 	public float getPosY() {
 		return posY;
-	}
-;
+	};
+
 	public int getSize() {
 		return size;
 	}
@@ -68,7 +68,7 @@ public class Bullet implements IEntity {
 	public boolean isAlive() {
 		return isAlive;
 	}
-	
+
 	@Override
 	public float getSpeed() {
 		return 1 / Game.bulletSpeed;

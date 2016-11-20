@@ -54,10 +54,9 @@ public class Hitbox {
 
 	public boolean isHiting(Hitbox b) {
 		Polygon playerPolygon = new Polygon(
-				new int[] { b.getPosXInPixel(), b.getPosXInPixel() + b.getSize(),
-						b.getPosXInPixel() + b.getSize(), b.getPosXInPixel() },
-				new int[] { b.getPosYInPixel(), b.getPosYInPixel(),
-						b.getPosYInPixel() + b.getSize(),
+				new int[] { b.getPosXInPixel(), b.getPosXInPixel() + b.getSize(), b.getPosXInPixel() + b.getSize(),
+						b.getPosXInPixel() },
+				new int[] { b.getPosYInPixel(), b.getPosYInPixel(), b.getPosYInPixel() + b.getSize(),
 						b.getPosYInPixel() + b.getSize() },
 				4);
 		switch (getType()) {
@@ -73,7 +72,7 @@ public class Hitbox {
 			int centerX = getPosXInPixel() + getSize() / 2;
 			int centerY = getPosYInPixel() + getSize() / 2;
 			int length = getSize() / 2;
-			
+
 			for (int x = getPosXInPixel(); x < getPosXInPixel() + getSize(); x++)
 				for (int y = 0; y < b.getSize(); y++)
 					if (playerPolygon.contains(x, y))

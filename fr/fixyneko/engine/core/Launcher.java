@@ -68,7 +68,7 @@ public class Launcher extends JFrame {
 		bulletPerWaveLabel = new JLabel("Bullet(s) per wave:");
 		bulletPerWaveTf = new JTextField();
 		bulletPerWaveTf.setText("" + 12);
-		
+
 		bombSpawnrateLabel = new JLabel("Bomb's spawnrate (Higher is easier):");
 		bombSpawnrateTf = new JTextField();
 		bombSpawnrateTf.setText("" + 240);
@@ -103,7 +103,7 @@ public class Launcher extends JFrame {
 
 		healerPowerLabel = new JLabel("Healer's power (More is easier):");
 		healerPowerTf = new JTextField();
-		healerPowerTf.setText("" +1);
+		healerPowerTf.setText("" + 1);
 
 		add(playerSizeLabel);
 		add(playerSizeTf);

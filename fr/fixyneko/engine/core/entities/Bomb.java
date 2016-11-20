@@ -44,16 +44,16 @@ public class Bomb implements IEntity {
 	public boolean isAlive() {
 		return isAlive;
 	}
-	
 
 	@Override
 	public boolean hitPlayer() {
-		for (float x = Game.p.getPosX(); x <  Game.p.getPosX() +  Game.p.getSize(); x++) {
-			for (float y =  Game.p.getPosY(); y <  Game.p.getPosY() +  Game.p.getSize(); y++) {
+		for (float x = Game.p.getPosX(); x < Game.p.getPosX() + Game.p.getSize(); x++) {
+			for (float y = Game.p.getPosY(); y < Game.p.getPosY() + Game.p.getSize(); y++) {
 				double distX = x - posX;
 				double distY = y - posY;
 				double length = Math.sqrt(((distX * distX) + (distY * distY)));
-				if (length < getSize()/2) return true;
+				if (length < getSize() / 2)
+					return true;
 			}
 		}
 		return false;

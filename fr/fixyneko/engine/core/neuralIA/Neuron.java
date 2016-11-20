@@ -9,22 +9,22 @@ public class Neuron {
 
 	public Neuron(int inputs) {
 
-		ratio = new double[inputs];
+		this.ratio = new double[inputs];
 		for (int i = 0; i < inputs; i++) {
-			ratio[i] = new Random().nextDouble();
+			this.ratio[i] = new Random().nextDouble();
 		}
-		trigger = new Random().nextDouble();
+		this.trigger = new Random().nextDouble();
 	}
 
 	public int compute(int[] inputs) {
 		double sum = 0;
 		for (int i = 0; i < inputs.length; i++) {
-			sum = sum + inputs[i] * ratio[i];
+			sum = sum + (inputs[i] * this.ratio[i] - this.trigger);
 		}
-		if (sum >= trigger)
+		if (sum >= 0)
 			return 1;
 		else
-			return 0;
+			return -1;
 
 	}
 
