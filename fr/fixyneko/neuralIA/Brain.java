@@ -1,6 +1,6 @@
 package fr.fixyneko.neuralIA;
 
-public class Brain {
+public class Brain implements Comparable<Brain> {
 
 	private Layer[] layers;
 	private int score;
@@ -21,11 +21,11 @@ public class Brain {
 		return outputs;
 	}
 
-	public void setScore(Brain brain, int score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
 
-	public int getScore(Brain brain) {
+	public int getScore() {
 		return (this.score);
 	}
 	
@@ -38,6 +38,11 @@ public class Brain {
 	}
 
 	public int outputNum() {
-		return layers[layers.length - 1].getOutNum();
+		return layers[layers.length - 1].getNeuronNum();
+	}
+
+	@Override
+	public int compareTo(Brain brain) {
+		return brain.getScore() - this.score;
 	}
 }

@@ -11,7 +11,7 @@ public class LayerInput implements Layer {
 		}
 	}
 
-	public int getOutNum() {
+	public int getNeuronNum() {
 		return this.neurons.length;
 	}
 
@@ -25,5 +25,10 @@ public class LayerInput implements Layer {
 
 	public Neuron getNeuron(int neuron) {
 		return this.neurons[neuron];
+	}
+
+	@Override
+	public void setNeuron(int num, Neuron neuron) {
+		this.neurons[num] = neuron;
 	}
 }

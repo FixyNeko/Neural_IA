@@ -7,11 +7,11 @@ public class LayerMiddle implements Layer {
 	public LayerMiddle(int neuronsNum, Layer parent) {
 		this.neurons = new Neuron[neuronsNum];
 		for (int i = 0; i < this.neurons.length; i++) {
-			this.neurons[i] = new Neuron(parent.getOutNum());
+			this.neurons[i] = new Neuron(parent.getNeuronNum());
 		}
 	}
 
-	public int getOutNum() {
+	public int getNeuronNum() {
 		return this.neurons.length;
 	}
 
@@ -25,5 +25,10 @@ public class LayerMiddle implements Layer {
 
 	public Neuron getNeuron(int neuron) {
 		return this.neurons[neuron];
+	}
+
+	@Override
+	public void setNeuron(int num, Neuron neuron) {
+		this.neurons[num] = neuron;
 	}
 }
