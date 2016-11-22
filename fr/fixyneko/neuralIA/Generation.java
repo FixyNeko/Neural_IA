@@ -7,6 +7,7 @@ import fr.gagoi.pwal.app.AppElement;
 public class Generation implements AppElement {
 
 	private Brain[] brains;
+	private boolean isRunning = true;
 
 	public Generation(int brains, int inputs, int[] neurons) {
 
@@ -66,7 +67,10 @@ public class Generation implements AppElement {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+	}
 
+	@Override
+	public boolean isRunning() {
+		return isRunning;
 	}
 }
