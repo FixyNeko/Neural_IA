@@ -15,8 +15,8 @@ public class LayerMiddle implements Layer {
 		return this.neurons.length;
 	}
 
-	public int[] compute(int[] parentOut) {
-		int[] output = new int[this.neurons.length];
+	public double[] compute(double[] parentOut) {
+		double[] output = new double[this.neurons.length];
 		for (int i = 0; i < this.neurons.length; i++) {
 			output[i] = this.neurons[i].compute(parentOut);
 		}

@@ -13,8 +13,8 @@ public class Brain implements Comparable<Brain> {
 		}
 	}
 
-	public int[] compute(int[] inputs) {
-		int[] outputs = layers[0].compute(inputs);
+	public double[] compute(double[] inputs) {
+		double[] outputs = layers[0].compute(inputs);
 		for (int i = 1; i < layers.length; i++) {
 			outputs = layers[i].compute(outputs);
 		}
@@ -28,8 +28,8 @@ public class Brain implements Comparable<Brain> {
 	public int getScore() {
 		return (this.score);
 	}
-	
-	public int getLayersNum(){
+
+	public int getLayersNum() {
 		return layers.length;
 	}
 

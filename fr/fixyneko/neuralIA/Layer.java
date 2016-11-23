@@ -3,7 +3,7 @@ package fr.fixyneko.neuralIA;
 public interface Layer {
 	public int getNeuronNum();
 
-	public int[] compute(int[] parentOut);
+	public double[] compute(double[] parentOut);
 
 	public Neuron getNeuron(int neuron);
 
