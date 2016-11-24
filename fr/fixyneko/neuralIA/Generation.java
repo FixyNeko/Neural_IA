@@ -23,21 +23,21 @@ public class Generation {
 		double[][] outputs = new double[this.brains.length][this.brains[0].outputNum()];
 		for (int i = 0; i < inputs.length; i++) {
 			outputs[i] = brains[i].compute(inputs[i]);
-			System.out.print("Brain number "+i+": inputs: ");
-			for( double val:inputs[i])
-				System.out.print(val + " ");
-			System.out.println();
+//			System.out.print("Brain number " + i + ": inputs: ");
+//			for (double val : inputs[i])
+//				System.out.print(val + " ");
+//				System.out.println();
 		}
 		return outputs;
 	}
 
 	public void evolve(double mutation) {
 
-		Arrays.sort(brains);
+		Arrays.sort(this.brains);
 
-		Brain best1 = brains[0], best2 = brains[1];
-		for (int i = 2; i < brains.length / 2; i++) {
-			brains[i] = mix(best1, best2, mutation);
+		Brain best1 = this.brains[0], best2 = this.brains[1];
+		for (int i = 2; i < this.brains.length / 2; i++) {
+			this.brains[i] = mix(best1, best2, mutation);
 		}
 	}
 
@@ -56,7 +56,7 @@ public class Generation {
 				if (rand > 1 - mutation)
 					brain.getLayer(i).setNeuron(j, new Neuron(brain1.getLayer(i - 1).getNeuronNum()));
 				else if (rand > (1 - mutation) / 2)
-					brain.getLayer(i).setNeuron(j, brain2.getLayer(0).getNeuron(j));
+					brain.getLayer(i).setNeuron(j, brain2.getLayer(i).getNeuron(j));
 			}
 		}
 		return brain;

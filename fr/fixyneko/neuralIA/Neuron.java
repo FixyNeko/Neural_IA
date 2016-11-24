@@ -6,7 +6,6 @@ public class Neuron {
 
 	private double[] ratio;
 	private double totalRatio = 0;
-	private double trigger;
 
 	public Neuron(int inputs) {
 
@@ -16,7 +15,6 @@ public class Neuron {
 		}
 		for (double val : ratio)
 			this.totalRatio = this.totalRatio + val;
-		this.trigger = new Random().nextDouble();
 	}
 
 	public double compute(double[] inputs) {
