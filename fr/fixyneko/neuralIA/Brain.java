@@ -26,7 +26,7 @@ public class Brain implements Comparable<Brain> {
 	}
 
 	public int getScore() {
-		return (this.score);
+		return this.score;
 	}
 
 	public int getLayersNum() {
@@ -44,5 +44,11 @@ public class Brain implements Comparable<Brain> {
 	@Override
 	public int compareTo(Brain brain) {
 		return brain.getScore() - this.score;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return super.toString() + "{score=" + this.score +"}";
 	}
 }
