@@ -1,6 +1,6 @@
 package fr.fixyneko.neuralIA;
 
-public class Brain implements Comparable<Brain> {
+public class Brain implements Comparable<Brain>, Cloneable {
 
 	private Layer[] layers;
 	private int score;
@@ -46,9 +46,13 @@ public class Brain implements Comparable<Brain> {
 		return brain.getScore() - this.score;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return super.toString() + "{score=" + this.score +"}";
 	}
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

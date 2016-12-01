@@ -36,32 +36,39 @@ public class Generation {
 	}
 
 	public void evolve(double mutation) {
-
-		System.out.print(
-				"Score pas trié: " + this.brains + " : ");
-		for (Brain b : this.brains) {
-			System.out.print(b + " : ");
-		}
 		System.out.println();
-
-//		Arrays.sort(this.brains);
-
-//		System.out.print("Score     trié: "+ this.brains + " : ");
+//		System.out.println(
+//				"Score pas trié: " + this.brains + " : ");
 //		for (Brain b : this.brains) {
-//			System.out.print(b.getScore() + " : ");
+//			System.out.println("Brain " + b);
 //		}
-//		System.out.println();
+
+		Arrays.sort(this.brains);
+
+		System.out.print("Score     trié: "+ this.brains + " : ");
+		for (Brain b : this.brains) {
+			System.out.print(b.getScore() + " : ");
+		}
 		System.out.println();
 
 		Brain best1 = this.brains[0], best2 = this.brains[1];
 		
-		for (int i = 2; i < this.brains.length / 2; i++) {
+		System.out.println("Bests: " + best1 + " : " + best2);
+
+		for (int i = 2; i < this.brains.length; i++) {
 			this.brains[i] = mix(best1, best2, mutation);
 		}
 	}
 
 	private Brain mix(Brain brain1, Brain brain2, double mutation) {
-		Brain brain = brain1;
+		Brain brain = null;
+		try {
+			brain = (Brain) brain1.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			System.out.print("Exception: ");
+			e.printStackTrace();
+		}
 		for (int j = 0; j < brain1.getLayer(0).getNeuronNum(); j++) {
 			double rand = new Random().nextDouble();
 			if (rand > 1 - mutation)
